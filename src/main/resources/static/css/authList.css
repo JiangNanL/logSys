@@ -1,0 +1,41 @@
+.lTags{
+height: 67px;
+border-bottom: 1px solid #1d87d8;
+font-size: 0;
+}
+.lTags .tag{
+	padding-left:10px;
+font-family: "Microsoft YaHei";
+font-size: 18px;
+color: #333333;
+width: 100%;
+display: inline-block;
+line-height: 67px;
+}
+.lTags .tag.on{
+position: relative;
+}
+.list{
+position:absolute;
+top:30%;
+width:90%;
+}
+.table{
+border-collapse: collapse;
+margin: 0 auto; 
+text-align: center;
+width: 90%;
+}
+table thead{
+background-color: #CCE8EB;
+ }
+.tb_td_l{
+border: 1px solid #cad9ea;
+width:30%;
+height: 30px;
+}
+.tb_td_r{
+	border: 1px solid #cad9ea;
+height: 30px;
+width: 70%;
+}

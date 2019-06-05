@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.banksteel.mapper.FunctionMapper">
+
+ <resultMap id="functionResultMap" type="com.banksteel.domain.Function">  
+ <id column="fid" property="fid"/>
+	<id  column="fname" property="fname"/> 
+	<id  column="url" property="url"/> 
+ 	</resultMap>  
+ 	<select id="finFunctionAll" resultMap="functionResultMap">
+ 	select * from function
+ 	</select>
+ 	
+	<select id="findFnameAndUrl" resultMap="functionResultMap">
+		select fname,url from function where fid in
+		 <foreach item="item" index="index" collection="list" open="("
+            separator="," close=")">#{item}</foreach>
+	</select>
+	
+</mapper>

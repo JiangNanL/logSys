@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>用户注册</title>
+<link rel="stylesheet" type="text/css" href="css/register.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="center">
+	
+			<div class="login_box">
+		<div class="login_box_content">
+		<label>用户注册</label> 
+		</div>
+			<div class="login_form">
+				<label class="error" id="error"></label>
+				<form action="" class="form-group">
+				
+					<div class="userid">
+					<label class="">账号：</label>
+					<input type="text" id="userid" class="input-text" maxlength="50">
+					</div>
+					<div class="username">
+					<label>姓名：</label>
+					<input type="text" id="username" class="input-text" maxlength="50">
+					</div>
+					<div class="password">
+					<label>密码：</label>
+					<input type="text" id="password" class="input-text" maxlength="50">
+					</div>
+					<div class="input_btn">
+					<input type="button" value="提交" class="input_btn_sub btn" onclick="loginSubmit()">
+					</div>
+				</form>
+</div>
+			</div>
+		</div>
+<script src="//a1.gystatic.com/mgt/v2/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+function loginSubmit()
+{
+	var userid =  document.getElementById("userid").value;
+ var username =  document.getElementById("username").value;
+ var pw = document.getElementById("password").value;
+ 
+ if(userid==""){
+		
+	 document.getElementById("error").innerHTML = "请输入账号！";
+	return;
+ }
+ if(username==""){
+	
+	 document.getElementById("error").innerHTML = "请输入姓名！";
+	return;
+ }
+ if(pw==""){
+	 document.getElementById("error").innerHTML = "请输入密码！";
+	 return; 
+ }
+ 
+ $.ajax
+({
+	url:"/register_view",
+	type:"post",
+	data: {"userid":userid,"username":username,"password":pw},
+	dataType:"json",
+	success: function(result){
+	
+	if(result.msg == 'success'){
+		window.location.href = "/index";
+	}
+	else
+	{
+    	 document.getElementById("error").innerHTML = result.msg;
+		 return;
+		 }
+		}
+})
+}
+
+</script>
+
+</body>
+</html>

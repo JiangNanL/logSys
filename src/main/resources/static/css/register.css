@@ -1,0 +1,42 @@
+body{
+	height:945px;
+	text-align: center;
+}
+.center{
+	width: 100%;
+	height: 100%;
+	background:url("/images/back.jpg");
+	position: relative;
+}
+.login_box{
+	position:absolute;
+	
+	background:#f6f6f6;
+	width: 300px;
+	height: 400px;
+	left:40%;
+	top:20%;
+	box-shadow: 3px -3px 15px rgba(0,0,0,.2);
+}
+.login_box_content{
+	font-size:36px;
+	color:#f6f6f6;
+	height:70px;
+	background: #4BA0DF;
+}
+.login_form .error{
+	color: red;
+}
+.login_form .input-text{
+	margin-top:20px;
+	height: 25px;
+	width: 150px;
+}
+.login_form .input_btn_sub{
+	color:#f6f6f6;
+	font-size:18px;
+	background:#FF8800;
+	margin-top:20px;
+	height: 40px;
+	width: 300px;
+}

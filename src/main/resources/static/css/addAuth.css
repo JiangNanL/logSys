@@ -1,0 +1,32 @@
+.lTags{
+height: 67px;
+border-bottom: 1px solid #1d87d8;
+font-size: 0;
+}
+.lTags .tag{
+	padding-left:10px;
+font-family: "Microsoft YaHei";
+font-size: 18px;
+color: #333333;
+width: 100%;
+display: inline-block;
+line-height: 67px;
+}
+.lTags .tag.on{
+position: relative;
+}
+.form{
+position:absolute;
+top:20%;
+left:30%;
+width:400px;
+}
+.input_text{
+	width: 200px;
+	height: 25px;
+}
+.input_btn{
+	width: 100px;
+	height: 30px;
+	background: #3385FF;
+}

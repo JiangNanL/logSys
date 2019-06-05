@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd" >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+<div class="up">
+<div class="up_box">
+	<label class="up_box_l">系统后台
+    </label>
+    <div class="up_box_r">
+<label class="">
+	用户:
+</label>
+<a id="username" href="login"> 
+</a>
+<a href="logout">退出登录</a>
+</div>
+</div>
+</div>
+<div class="center">
+	<div  class="center_box">
+		<div class="center_l fl">
+			<ul>
+				#foreach($item in $map.keySet())
+				<li>
+					<a onclick="displayfun($item)">一级菜单1:$item</a>
+					
+					<ul class="menu" id="$item">
+						#foreach($list in $map.get($item))
+						<li><a onclick="jump('${list.url}')">${list.fname}</a>
+						</li>
+						#end
+					</ul>
+					
+                </li>
+				#end		
+			</ul>
+        </div>
+		<div class="center_r fl" id = "center_r">
+			
+        </div>
+		</div>
+	</div>
+<div class="buttom" id = "buttom">
+
+</div>
+
+<script src="//a1.gystatic.com/mgt/v2/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+function jump(url){
+
+$("#center_r").load(url);
+}
+
+var hide = true;
+function displayfun(data){
+
+	if(hide){
+		data.style.display="block";
+		hide = false;
+	}
+	else {
+	data.style.display="none";
+		hide = true;
+	}
+}
+
+$(function(){
+ $.ajax
+({
+	url:"/indexUsername",
+	type:"post",
+	data: {},
+	dataType:"json",
+	success: function(result){
+	var name = result.username;
+	document.getElementById("username").innerHTML = name;
+		}
+	
+})
+})
+</script>
+</body>
+</html>

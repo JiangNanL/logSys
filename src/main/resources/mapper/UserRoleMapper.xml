@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.banksteel.mapper.UserRoleMapper">
+
+<!-- <resultMap id="userResultMap" type=User">  -->
+<!--  		<id column="userid" property="userid" />  -->
+<!--  		<result column="username" property="username" />  -->
+<!-- 		<result column="password" property="password" />  -->
+		
+<!--  	</resultMap>  -->
+	<select id="findRid" resultType="Integer">
+		select rid from user_role where uid = #{uid}
+	</select>
+	
+	
+</mapper>

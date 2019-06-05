@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.banksteel.mapper.AuthFunMapper">
+
+<!-- <resultMap id="roleAuthMap" type="java.util.List">  -->
+<!--  		 <result column="aid" property="aid"/> -->
+<!--  	</resultMap>  -->
+	<select id="findFid" resultType="Integer">
+		select fid from auth_fun where aid = #{aid}
+	</select>
+	
+	<insert id="insertAuthFun">
+	insert into auth_fun(aid,fid) values(#{aid},#{fid})
+	</insert>
+	
+</mapper>

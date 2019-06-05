@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>test</title>
+</head>
+<body>
+<div class="up">
+<label id="test">
+</label>
+<label id="name">
+</label>
+<input type="button" value="提交" class="input_btn" onclick="loginSubmit()">
+</div>
+
+
+<script src="//a1.gystatic.com/mgt/v2/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+ $.ajax
+({
+	url:"/testmethod",
+	type:"post",
+	data: {"username":"冷江南"},
+	dataType:"json",
+	success: function(result){
+	var msg = result.data.msg;
+	var name = result.data.username;
+	document.getElementById("test").innerHTML = msg;
+	document.getElementById("name").innerHTML = name;
+	
+		}
+})
+}); 
+
+</script>
+
+</body>
+</html>
